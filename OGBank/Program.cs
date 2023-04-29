@@ -6,7 +6,7 @@ var connectionString = builder.Configuration.GetConnectionString("Authentication
 
 builder.Services.AddDbContext<AuthenticationContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<BankUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<AuthenticationContext>();
+builder.Services.AddDefaultIdentity<BankUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>().AddEntityFrameworkStores<AuthenticationContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
