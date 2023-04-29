@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace OGBank.Controllers
 {
-    [Authorize]
+  //  [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,7 +14,7 @@ namespace OGBank.Controllers
         {
             _logger = logger;
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public IActionResult Index()
         {
             return View();
@@ -24,6 +24,7 @@ namespace OGBank.Controllers
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Test()
         {
             return View();
