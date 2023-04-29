@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using OGBank.Areas.Identity.Data
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@inject SignInManager<BankUser> SignInManager
+@inject UserManager<BankUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <p> @UserManager.GetUserName(User)!</p>
+    </div>
+
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+      
+    </div>
+    
+}
+
+
