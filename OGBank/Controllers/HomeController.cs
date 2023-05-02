@@ -24,8 +24,8 @@ namespace OGBank.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "Admin")]
-        public IActionResult Test()
+        [Authorize]
+        public IActionResult MyAccount()
         {
             return View();
         }

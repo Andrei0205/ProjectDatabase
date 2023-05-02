@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using OGBank.Areas.Identity.Data;
+using OGBank.Models;
 
 namespace OGBank.Areas.Identity.Data;
 
@@ -11,6 +12,8 @@ public class AuthenticationContext : IdentityDbContext<BankUser>
         : base(options)
     {
     }
+
+    public DbSet<Client> Clients { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
