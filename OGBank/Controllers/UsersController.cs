@@ -154,15 +154,22 @@ namespace OGBank.Controllers
         {
             if (_context.User == null)
             {
+ 
                 return Problem("Entity set 'AuthenticationContext.User'  is null.");
             }
+            
             var user = await _context.User.FindAsync(id);
+           // var myUser = await _userManager.FindByEmailAsync(user.Email);
+
             if (user != null)
             {
+                var myUser = await _userManager.FindByEmailAsync(user.Email);
+                await _userManager.DeleteAsync(myUser);
                 _context.User.Remove(user);
             }
             
             await _context.SaveChangesAsync();
+          //  await_userManager.DeleteAsync(myUser);
             return RedirectToAction(nameof(Index));
         }
 
