@@ -14,6 +14,7 @@ public class AuthenticationContext : IdentityDbContext<BankUser>
     }
 
     public DbSet<Client> Clients { get; set; }
+    public DbSet<User> Users { get;set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -22,4 +23,7 @@ public class AuthenticationContext : IdentityDbContext<BankUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+  //  public DbSet<User> Users { get;set; }
+
+    public DbSet<OGBank.Models.User> User { get; set; } = default!;
 }
