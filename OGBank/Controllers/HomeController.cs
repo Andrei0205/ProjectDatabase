@@ -20,6 +20,31 @@ namespace OGBank.Controllers
             return View();
         }
 
+        public IActionResult ViewBalance()
+        {
+            return View();
+        }
+
+        public IActionResult PayTax()
+        {
+            return View();
+        }
+
+        public IActionResult Paid()
+        {
+            return View();
+        }
+
+        public IActionResult ViewTransactions()
+        {
+            return View();
+        }
+
+        public IActionResult SetInferiorLimit()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

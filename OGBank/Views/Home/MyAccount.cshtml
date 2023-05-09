@@ -1,4 +1,5 @@
-﻿<html>
+﻿
+<html>
 @{
     ViewBag.Title = "Index";
 }
@@ -15,13 +16,15 @@
 
 <style>
 
+   
+
 .text-block {
   position: absolute;
   bottom: 700px;
-  right: 800px;
+  right: 900px;
   background-color: 
   color: white;
-  padding-left: 20px;
+  padding-left: 50px;
   padding-right: 20px;
 }
 
@@ -39,7 +42,9 @@
 body {
   background: hsl(220deg, 10%, 97%);
   margin: 0;
-  padding: 0;
+  padding: 0;body {
+  background-image: url('/Images/ogBANK_card.png');
+}
 }
 
 .buttons-container {
@@ -97,7 +102,7 @@ button {
 .text-block {
   position: absolute;
   bottom: 700px;
-  right: 800px;
+  right: 900px;
   background-color: 
   color: white;
   padding-left: 20px;
@@ -133,6 +138,8 @@ h4{font-size : 30px;}
 }
 
 h1{font-size : 25px ;}
+
+    
 </style>
 <body>
 
@@ -143,37 +150,49 @@ h1{font-size : 25px ;}
 
 <br> <center>
 
-        <img src="/Images/ogBANK_card.png" coords="0,0,100,100" width="600" height="400" alt="CARD!">
+        <img src="/Images/ogBANK_card.png" width="600" height="400" alt="CARD!">
     </center>
 
 
         <div class="text-block" style="     top: 320px;
-    left: 100px;
+    left: 500px;
     right: 0px;
     bottom: 0px;
+font-size : 150px ;
  ">
     <h4>4170  2948  4293  1900</h4>
   </div>
 
         <div class="text-block2" style="  top: 250px;
-    left: 100px;
+    left: 500px;
     right: 0px;
     bottom: 0px;">
-    <h1>Exp Date : 30/04/2001 </h1>
+    <h1>Exp Date : 30/04/2025 </h1>
   </div>
 
  </div>
+ <center>
 <div class="btn-group">
  
 <div class="buttons-container">
-  <button class="button-arounder">View Balance</button>
-<button class="button-arounder">Pay Tax</button>
-<button class="button-arounder">View Transactions</button>
-<button class="button-arounder">Inferior Limit</button>
-<button class="button-arounder">Change Pin</button>
-</div>
-</div>
+            <button class="button-arounder">
+                <a asp-area="" asp-controller="Home" asp-action="ViewBalance">View Balance</a>
+     </button>
+            <button class="button-arounder">
+                <a asp-area="" asp-controller="Home" asp-action="PayTax">Pay Tax</a>
+     </button>
 
+            <button class="button-arounder">
+                <a asp-area="" asp-controller="Home" asp-action="ViewTransactions">View Transactions</a>
+    </button>
+            <button class="button-arounder">
+                <a  asp-area="" asp-controller="Home" asp-action="SetInferiorLimit"> Set Inferior Limit</a>
+   </button>
+
+ 
+</div>
+</div>
+</center>
 
 </body>
 
